@@ -1,0 +1,184 @@
+{
+  "accountData": [
+    {
+      "account_name": "Acme Corporation",
+      "email": "contact@acmecorp.com",
+      "phone_no": "+1-800-555-1234",
+      "website": "https://www.acmecorp.com",
+      "industry": "Manufacturing",
+      "account_status": "Active",
+      "remark": "High-value client with consistent orders."
+    },
+    {
+      "account_name": "Beta Solutions",
+      "email": "info@betasolutions.com",
+      "phone_no": "+1-800-555-5678",
+      "website": "https://www.betasolutions.com",
+      "industry": "IT Services",
+      "account_status": "Inactive",
+      "remark": "Pending renewal, last contact was 6 months ago."
+    },
+    {
+      "account_name": "Gamma Enterprises",
+      "email": "sales@gammaenterprises.com",
+      "phone_no": "+1-800-555-9101",
+      "website": "https://www.gammaenterprises.com",
+      "industry": "Retail",
+      "account_status": "Active",
+      "remark": "New client, first order completed last month."
+    },
+    {
+      "account_name": "Delta Technologies",
+      "email": "support@deltatech.com",
+      "phone_no": "+1-800-555-1122",
+      "website": "https://www.deltatech.com",
+      "industry": "Technology",
+      "account_status": "Active",
+      "remark": "Ongoing project, weekly updates required."
+    },
+    {
+      "account_name": "Epsilon Innovations",
+      "email": "info@epsiloninnovations.com",
+      "phone_no": "+1-800-555-3344",
+      "website": "https://www.epsiloninnovations.com",
+      "industry": "Healthcare",
+      "account_status": "Inactive",
+      "remark": "Account on hold, awaiting budget approval."
+    },
+    {
+      "account_name": "Zeta Logistics",
+      "email": "contact@zetalogistics.com",
+      "phone_no": "+1-800-555-5566",
+      "website": "https://www.zetalogistics.com",
+      "industry": "Logistics",
+      "account_status": "Active",
+      "remark": "Regular shipments, timely deliveries."
+    },
+    {
+      "account_name": "Eta Financials",
+      "email": "services@etafinancials.com",
+      "phone_no": "+1-800-555-7788",
+      "website": "https://www.etafinancials.com",
+      "industry": "Finance",
+      "account_status": "Active",
+      "remark": "High-priority client, confidential handling."
+    },
+    {
+      "account_name": "Theta Consultancy",
+      "email": "support@thetaconsultancy.com",
+      "phone_no": "+1-800-555-9900",
+      "website": "https://www.thetaconsultancy.com",
+      "industry": "Consulting",
+      "account_status": "Inactive",
+      "remark": "Service contract expired, follow-up needed."
+    },
+    {
+      "account_name": "Iota Ventures",
+      "email": "info@iotaventures.com",
+      "phone_no": "+1-800-555-2134",
+      "website": "https://www.iotaventures.com",
+      "industry": "Investment",
+      "account_status": "Active",
+      "remark": "New investor, first meeting scheduled."
+    },
+    {
+      "account_name": "Kappa Solutions",
+      "email": "contact@kappasolutions.com",
+      "phone_no": "+1-800-555-3456",
+      "website": "https://www.kappasolutions.com",
+      "industry": "Software",
+      "account_status": "Inactive",
+      "remark": "No activity in the past year, needs review."
+    },
+    {
+      "account_name": "Lambda Systems",
+      "email": "support@lambdasystems.com",
+      "phone_no": "+1-800-555-5678",
+      "website": "https://www.lambdasystems.com",
+      "industry": "Engineering",
+      "account_status": "Active",
+      "remark": "Ongoing maintenance contract."
+    },
+    {
+      "account_name": "Mu Designs",
+      "email": "sales@mudesigns.com",
+      "phone_no": "+1-800-555-7890",
+      "website": "https://www.mudesigns.com",
+      "industry": "Design",
+      "account_status": "Active",
+      "remark": "New design project, delivery next quarter."
+    },
+    {
+      "account_name": "Nu Pharmaceuticals",
+      "email": "info@nupharma.com",
+      "phone_no": "+1-800-555-9012",
+      "website": "https://www.nupharma.com",
+      "industry": "Pharmaceuticals",
+      "account_status": "Inactive",
+      "remark": "Pending FDA approval for new drug."
+    },
+    {
+      "account_name": "Xi Industries",
+      "email": "contact@xiindustries.com",
+      "phone_no": "+1-800-555-1233",
+      "website": "https://www.xiindustries.com",
+      "industry": "Construction",
+      "account_status": "Active",
+      "remark": "Large-scale project, multi-year contract."
+    },
+    {
+      "account_name": "Omicron Holdings",
+      "email": "support@omicronholdings.com",
+      "phone_no": "+1-800-555-4567",
+      "website": "https://www.omicronholdings.com",
+      "industry": "Real Estate",
+      "account_status": "Active",
+      "remark": "Recently acquired new property portfolio."
+    },
+    {
+      "account_name": "Pi Electronics",
+      "email": "info@pielectronics.com",
+      "phone_no": "+1-800-555-7891",
+      "website": "https://www.pielectronics.com",
+      "industry": "Electronics",
+      "account_status": "Inactive",
+      "remark": "Product recall, under review."
+    },
+    {
+      "account_name": "Rho Media",
+      "email": "contact@rhomedia.com",
+      "phone_no": "+1-800-555-8901",
+      "website": "https://www.rhomedia.com",
+      "industry": "Media",
+      "account_status": "Active",
+      "remark": "New advertising campaign in progress."
+    },
+    {
+      "account_name": "Sigma Consultants",
+      "email": "support@sigmaconsultants.com",
+      "phone_no": "+1-800-555-2345",
+      "website": "https://www.sigmaconsultants.com",
+      "industry": "Consulting",
+      "account_status": "Inactive",
+      "remark": "Awaiting project approval from client."
+    },
+    {
+      "account_name": "Tau Telecom",
+      "email": "info@tautelecom.com",
+      "phone_no": "+1-800-555-6789",
+      "website": "https://www.tau.com",
+      "industry": "Telecommunications",
+      "account_status": "Active",
+      "remark": "Expanding network coverage in new regions."
+    },
+    {
+      "account_name": "Upsilon Energy",
+      "email": "support@upsilonenergy.com",
+      "phone_no": "+1-800-555-9013",
+      "website": "https://www.upsilonenergy.com",
+      "industry": "Energy",
+      "account_status": "Active",
+      "remark": "Renewable energy project, long-term partnership."
+    }
+  ]
+}
