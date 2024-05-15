@@ -1,21 +1,16 @@
-import { MdDashboard } from "react-icons/md";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <nav>
-      <div className="flex items-center gap-2">
-        <MdDashboard />
-        <span>Dashboard</span>
-      </div>
-      <div className="flex  items-center gap-2">
-        <MdDashboard />
-        <span>Accounts</span>
-      </div>
-      <div className="flex  items-center gap-2">
-        <MdDashboard />
-        <span>Contact</span>
-      </div>
-    </nav>
+    <div className="flex flex-col gap-2 px-5 py-2">
+      <Link to="/profile" className="border px-2 py-1 justify-self-center ">
+        Profile
+      </Link>
+      <Link to="/account" className="border px-2 py-1 justify-self-center ">
+        Account
+      </Link>
+    </div>
   );
 };
 

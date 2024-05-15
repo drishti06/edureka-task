@@ -7,6 +7,9 @@ import { ScrollArea } from "./ui/scroll-area";
 import { Textarea } from "./ui/textarea";
 import { useForm } from "react-hook-form";
 import { Button } from "./ui/button";
+import axios from "axios";
+import Swal from "sweetalert2";
+
 const Form = () => {
   const {
     register,
@@ -14,8 +17,27 @@ const Form = () => {
     formState: { errors },
   } = useForm();
 
+  const onSubmit = async (data) => {
+    console.log(data);
+    const baseUrl = "http://localhost:8080/test";
+    try {
+      await axios
+        .post(baseUrl, data)
+        .then(() => {
+          console.log("success");
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Error occurred",
+            text: "Error",
+          });
+        });
+    } catch (error) {}
+  };
+
   return (
-    <Tabs defaultValue="account" className="w-full h-[80vh]">
+    <Tabs defaultValue="personal" className="w-full h-[80vh]">
       <TabsList>
         <TabsTrigger value="personal">Personal</TabsTrigger>
         <TabsTrigger value="education">Account</TabsTrigger>
@@ -25,7 +47,7 @@ const Form = () => {
       <TabsContent value="personal" className="h-[100%]">
         <Card className="h-[100%]">
           <ScrollArea className="h-[100%]">
-            <div className="mb-5 flex flex-col justify-center px-5 gap-2 text-white bg-pink-400 rounded-tl-md rounded-tr-md h-[10dvh]">
+            <div className="mb-5 flex flex-col justify-center px-5   gap-2 text-white bg-pink-400 rounded-tl-md rounded-tr-md h-[10dvh]">
               <CardTitle className="capitalize font-medium">
                 Personal details
               </CardTitle>
@@ -38,7 +60,7 @@ const Form = () => {
             </div>
             <form
               noValidate
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(onSubmit)}
               className="px-4 flex flex-col justify-between gap-5"
             >
               <div className="flex gap-4 justify-between">
@@ -47,21 +69,45 @@ const Form = () => {
                     First Name
                     <span className="text-red-500 text-xl font-medium">*</span>
                   </Label>
-                  <Input id="firstName" placeholder="enter first name" />
+                  <Input
+                    id="firstName"
+                    type="text"
+                    placeholder="enter first name"
+                    {...register("firstName", { required: true })}
+                  />
+                  {errors.firstName && (
+                    <p className="text-red-500">First Name is required</p>
+                  )}
                 </div>
                 <div className="w-1/3">
                   <Label className="flex items-center gap-1">
                     Middle Name
                     <span className="text-red-500 text-xl font-medium">*</span>
                   </Label>
-                  <Input id="middleName" placeholder="enter middle name" />
+                  <Input
+                    id="middleName"
+                    type="text"
+                    placeholder="enter middle name"
+                    {...register("middleName", { required: true })}
+                  />
+                  {errors.middleName && (
+                    <p className="text-red-500">Middle Name is required</p>
+                  )}
                 </div>
                 <div className="w-1/3">
                   <Label className="flex items-center gap-1">
                     Last Name
                     <span className="text-red-500 text-xl font-medium">*</span>
                   </Label>
-                  <Input id="lastName" placeholder="enter last name" />
+                  <Input
+                    id="lastName"
+                    type="text"
+                    placeholder="enter last name"
+                    {...register("lastName", { required: true })}
+                  />
+                  {errors.lastName && (
+                    <p className="text-red-500">Last Name is required</p>
+                  )}
                 </div>
               </div>
               <div className="flex gap-4 justify-between">
@@ -73,6 +119,7 @@ const Form = () => {
                   <Input
                     id="email"
                     type="email"
+                    placeholder="enter email"
                     {...register("email", {
                       required: "email is required",
                       pattern: {
@@ -80,14 +127,12 @@ const Form = () => {
                         message: "email not valid",
                       },
                     })}
-                    placeholder="enter email"
                   />
                   {errors.email && (
-                    <p style={{ color: "red", fontSize: "15px" }}>
-                      {errors.email.message}
-                    </p>
+                    <p className="text-red-500">{errors.email.message}</p>
                   )}
                 </div>
+
                 <div className="w-1/2">
                   <Label className="flex items-center gap-1">
                     Phone
@@ -96,13 +141,17 @@ const Form = () => {
                   <Input
                     id="phone"
                     type="number"
+                    placeholder="enter phone no."
                     {...register("phone", {
                       required: "Phone No. is required",
                     })}
-                    placeholder="enter phone no."
                   />
+                  {errors.phone && (
+                    <p className="text-red-500">{errors.phone.message}</p>
+                  )}
                 </div>
               </div>
+
               <div>
                 <div>
                   <Label className="flex items-center gap-1">
@@ -113,7 +162,11 @@ const Form = () => {
                     id="address"
                     className="border rounded-md"
                     placeholder="enter address"
-                  ></Textarea>
+                    {...register("address", { required: true })}
+                  />
+                  {errors.address && (
+                    <p className="text-red-500">Address is required</p>
+                  )}
                 </div>
               </div>
               <div className="flex justify-between gap-4">
@@ -126,32 +179,60 @@ const Form = () => {
                     className="pincode"
                     type="number"
                     placeholder="enter pincode"
+                    {...register("pincode", { required: true })}
                   />
+                  {errors.pincode && (
+                    <p className="text-red-500">Pin Code is required</p>
+                  )}
                 </div>
+
                 <div className="w-1/4">
                   <Label className="flex items-center gap-1">
                     Country
                     <span className="text-red-500 text-xl font-medium">*</span>
                   </Label>
-                  <Input id="country" placeholder="enter country" />
+                  <Input
+                    id="country"
+                    placeholder="enter country"
+                    {...register("country", { required: true })}
+                  />
+                  {errors.country && (
+                    <p className="text-red-500">Country is required</p>
+                  )}
                 </div>
+
                 <div className="w-1/4">
                   <Label className="flex items-center gap-1">
                     State
                     <span className="text-red-500 text-xl font-medium">*</span>
                   </Label>
-                  <Input placeholder="enter state" />
+                  <Input
+                    id="state"
+                    placeholder="enter state"
+                    {...register("state", { required: true })}
+                  />
+                  {errors.state && (
+                    <p className="text-red-500">State is required</p>
+                  )}
                 </div>
+
                 <div className="w-1/4">
                   <Label className="flex items-center gap-1">
                     City
                     <span className="text-red-500 text-xl font-medium">*</span>
                   </Label>
-                  <Input placeholder="enter city" />
+                  <Input
+                    id="city"
+                    placeholder="enter city"
+                    {...register("city", { required: true })}
+                  />
+                  {errors.city && (
+                    <p className="text-red-500">City is required</p>
+                  )}
                 </div>
               </div>
               <div>
-                <Button>Submit</Button>
+                <Button type="submit">Submit</Button>
               </div>
             </form>
           </ScrollArea>

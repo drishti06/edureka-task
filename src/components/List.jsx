@@ -10,7 +10,7 @@ const List = () => {
       <ScrollArea orientaion="both" className="p-3 bg-gray-50 h-[90dvh]">
         <Routes>
           <Route path="/account" element={<Accounts />} />
-          <Route path="/form" element={<Form />} />
+          <Route path="/profile" element={<Form />} />
         </Routes>
       </ScrollArea>
     </>

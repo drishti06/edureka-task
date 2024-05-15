@@ -29,7 +29,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Tablee = ({ data, columns, columnName }) => {
   const [sorting, setSorting] = useState([]);
-  const [columnVisibility, setColumnVisibility] = useState({ id: false });
+  const [columnVisibility, setColumnVisibility] = useState();
   const [columnFilters, setColumnFilters] = useState([]);
   const [rowSelection, setRowSelection] = useState({});
 
@@ -56,16 +56,16 @@ const Tablee = ({ data, columns, columnName }) => {
   });
 
   return (
-    <div className="ml-1">
-      <div className="py-2">
-        <TableToolbar table={table} columnName={columnName} />
-      </div>
-      <Card>
-        <Table className="overflow-scroll overflow-x-visible pdf-table w-full text-sm text-lefttext-gray-500 ">
-          <TableHeader className="hover:bg-gray-50 cursor-pointer">
-            <TableHead className="">
+    <div>
+      <Card className="px-3">
+        <div className="p-4">
+          <TableToolbar table={table} columnName={columnName} />
+        </div>
+        <Table>
+          <TableHeader className="bg-blue-100 cursor-pointer">
+            <TableHead>
               {table.getHeaderGroups().map((headerGroup) => (
-                <div className="flex text-center ">
+                <div>
                   <tr key={headerGroup.id} className="flex w-full">
                     {headerGroup.headers.map((header) => (
                       <>
@@ -75,79 +75,51 @@ const Tablee = ({ data, columns, columnName }) => {
                           onClick={header.column.getToggleSortingHandler()}
                         >
                           {header.isPlaceholder ? null : (
-                            <span
-                              className="flex items-center gap-1 text-md"
-                              onClick={() =>
-                                setShowIcon((prevShowIcon) => ({
-                                  ...Object.fromEntries(
-                                    Object.entries(prevShowIcon).map(
-                                      ([key]) => [key, false]
-                                    )
-                                  ),
-                                  [header.id]: !prevShowIcon[header.id],
-                                }))
-                              }
-                            >
-                              <span className="flex items-center gap-2 uppercase ">
+                            <span className="flex items-center text-md">
+                              <span className="flex items-center uppercase">
                                 {flexRender(
                                   header.column.columnDef.header,
                                   header.getContext()
                                 )}
-                                <IoIosArrowDown />
                               </span>
                             </span>
                           )}
                         </th>
                       </>
                     ))}
-                    <div>
-                      <span className="text-transparent">{" Opts"}</span>
-                    </div>
                   </tr>
                 </div>
               ))}
             </TableHead>
           </TableHeader>
-          <Separator />
           <TableBody>
             {table.getRowModel().rows.map((row, index) => (
               <>
-                <TableCell
-                  // onMouseOver={() => {
-                  //   setSelectedRow(row.original);
-                  // }}
+                <span
                   key={index}
-                  className="flex hover:bg-gray-50 w-full cursor-pointer justify-evenly items-center py-2"
+                  className={`flex ${
+                    index % 2 !== 0 ? "bg-gray-100" : ""
+                  } px-3 flex justify-evenly py-2 w-full cursor-pointer items-center`}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <td key={cell.id} className="p-2 w-full capitalize">
-                      {cell.row.original === "departments"
-                        ? cell.row.original.departments.map(
-                            (department, index) => (
-                              <div key={index}>{department.key}</div>
-                            )
-                          )
-                        : flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext()
-                          )}
+                    <td key={cell.id} className="text-start w-full">
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
                     </td>
                   ))}
-                  {/* <DataTableRowActions
-                  {...tableProps}
-                  /> */}
-                </TableCell>
-                {table.getRowModel().rows.length - 1 !== index && <Separator />}
+                  <DataTableRowActions />
+                </span>
               </>
             ))}
           </TableBody>
         </Table>
-      </Card>
-      <div className="flex justify-between items-center">
-        <div className="py-2">
+        <div className="py-2 flex justify-end w-full">
           <TablePagination table={table} />
         </div>
-      </div>
+      </Card>
+      <div className="flex justify-between items-center"></div>
     </div>
   );
 };

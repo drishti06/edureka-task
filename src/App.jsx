@@ -17,14 +17,7 @@ function App() {
     <Router>
       <Navbar />
       <ResizablePanelGroup className="" direction="horizontal">
-        <div className="flex flex-col gap-2 px-5 py-2">
-          <Link to="/form" className="border px-2 py-1 justify-self-center ">
-            Form
-          </Link>
-          <Link to="/account" className="border px-2 py-1 justify-self-center ">
-            Account
-          </Link>
-        </div>
+        <Sidebar />
         <ResizableHandle className="" />
         <ResizablePanel>
           <List />

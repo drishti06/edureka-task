@@ -1,28 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Table } from "./ui/table";
 import { useDispatch, useSelector } from "react-redux";
-import { setColumnNames, setTableData } from "@/feature/account/accountSlice";
-
+import { fetchAccountsData } from "@/feature/account/accountSlice";
+import Tablee from "./table/Table";
 const Accounts = () => {
   const dispatch = useDispatch();
-  const tableData = useSelector((state) => state.table.tableData);
-  const columnNames = useSelector((state) => state.table.columnNames);
-
+  const { tableData, columnNames, status, error } = useSelector(
+    (state) => state.accounts
+  );
   useEffect(() => {
-    dispatch(setTableData(tableData));
-    dispatch(setColumnNames(columnNames));
-  }, [dispatch]);
+    if (status === "idle") {
+      dispatch(fetchAccountsData());
+    }
+  }, [status, dispatch]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "failed") {
+    return <div>Error: {error}</div>;
+  }
+
   return (
-    <Tabs defaultValue="account" className="w-[400px]">
+    <Tabs defaultValue="account" className="w-full">
       <TabsList>
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="create">Create</TabsTrigger>
       </TabsList>
       <TabsContent value="account">
-        <Table table={tableData} columns={columnNames} />
+        <Tablee data={tableData} columns={columnNames} />
       </TabsContent>
-      <TabsContent value="create">Change your password here.</TabsContent>
+      <TabsContent value="create">
+        here will be create form for adding data in account list
+      </TabsContent>
     </Tabs>
   );
 };
