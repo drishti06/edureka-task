@@ -16,8 +16,10 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <ResizablePanelGroup className="" direction="horizontal">
-        <Sidebar />
+      <ResizablePanelGroup direction="horizontal">
+        <div className="hidden sm:block">
+          <Sidebar />
+        </div>
         <ResizableHandle className="" />
         <ResizablePanel>
           <List />

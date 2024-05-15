@@ -1,13 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { IoPersonCircleSharp } from "react-icons/io5";
+import { MdSwitchAccount } from "react-icons/md";
 
 const Sidebar = () => {
+  const location = useLocation();
+
   return (
-    <div className="flex flex-col gap-2 px-5 py-2">
-      <Link to="/profile" className="border px-2 py-1 justify-self-center ">
+    <div className="flex flex-col">
+      <Link
+        to="/profile"
+        className={`flex items-center gap-2 px-5 py-2 ${
+          location.pathname === "/profile" ? "bg-blue-100" : ""
+        }`}
+      >
+        <IoPersonCircleSharp className="text-xl" />
         Profile
       </Link>
-      <Link to="/account" className="border px-2 py-1 justify-self-center ">
+      <Link
+        to="/account"
+        className={`flex items-center gap-2 px-5 py-2 ${
+          location.pathname === "/account" ? "bg-blue-100" : ""
+        }`}
+      >
+        <MdSwitchAccount className="text-xl" />
         Account
       </Link>
     </div>

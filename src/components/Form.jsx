@@ -63,8 +63,8 @@ const Form = () => {
               onSubmit={handleSubmit(onSubmit)}
               className="px-4 flex flex-col justify-between gap-5"
             >
-              <div className="flex gap-4 justify-between">
-                <div className="w-1/3">
+              <div className="flex flex-col sm:flex-row gap-4 justify-between">
+                <div className="sm:w-1/3">
                   <Label className="flex items-center gap-1">
                     First Name
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -79,7 +79,7 @@ const Form = () => {
                     <p className="text-red-500">First Name is required</p>
                   )}
                 </div>
-                <div className="w-1/3">
+                <div className="sm:w-1/3">
                   <Label className="flex items-center gap-1">
                     Middle Name
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -94,7 +94,7 @@ const Form = () => {
                     <p className="text-red-500">Middle Name is required</p>
                   )}
                 </div>
-                <div className="w-1/3">
+                <div className="sm:w-1/3">
                   <Label className="flex items-center gap-1">
                     Last Name
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -110,8 +110,8 @@ const Form = () => {
                   )}
                 </div>
               </div>
-              <div className="flex gap-4 justify-between">
-                <div className="w-1/2">
+              <div className="flex flex-col sm:flex-row gap-4 justify-between">
+                <div className="sm:w-1/2">
                   <Label className="flex items-center gap-1">
                     Email
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -133,7 +133,7 @@ const Form = () => {
                   )}
                 </div>
 
-                <div className="w-1/2">
+                <div className="sm:w-1/2">
                   <Label className="flex items-center gap-1">
                     Phone
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -169,8 +169,8 @@ const Form = () => {
                   )}
                 </div>
               </div>
-              <div className="flex justify-between gap-4">
-                <div className="w-1/4">
+              <div className="flex flex-col md:flex-row justify-between gap-4">
+                <div className="md:w-1/4">
                   <Label className="flex items-center gap-1">
                     Pin Code
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -186,7 +186,7 @@ const Form = () => {
                   )}
                 </div>
 
-                <div className="w-1/4">
+                <div className="md:w-1/4">
                   <Label className="flex items-center gap-1">
                     Country
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -201,7 +201,7 @@ const Form = () => {
                   )}
                 </div>
 
-                <div className="w-1/4">
+                <div className="md:w-1/4">
                   <Label className="flex items-center gap-1">
                     State
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -216,7 +216,7 @@ const Form = () => {
                   )}
                 </div>
 
-                <div className="w-1/4">
+                <div className="md:w-1/4">
                   <Label className="flex items-center gap-1">
                     City
                     <span className="text-red-500 text-xl font-medium">*</span>
@@ -231,8 +231,10 @@ const Form = () => {
                   )}
                 </div>
               </div>
-              <div>
-                <Button type="submit">Submit</Button>
+              <div className="py-2">
+                <Button type="submit" className="w-full sm:w-max">
+                  Submit
+                </Button>
               </div>
             </form>
           </ScrollArea>

@@ -1,4 +1,3 @@
-// src/redux/accountsSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import accountData from "../../data.json";
 
