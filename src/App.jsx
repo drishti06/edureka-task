@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Navbar />
       <ResizablePanelGroup direction="horizontal">
-        <div className="hidden sm:block">
+        <div className="w-2rem sm:block">
           <Sidebar />
         </div>
         <ResizableHandle className="" />
