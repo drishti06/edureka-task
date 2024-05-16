@@ -15,7 +15,10 @@ const Sidebar = () => {
         }`}
       >
         <IoPersonCircleSharp className="text-xl" />
-        Profile
+<span className="hidden sm:block">
+Profile 
+</span>
+        
       </Link>
       <Link
         to="/account"
@@ -24,7 +27,10 @@ const Sidebar = () => {
         }`}
       >
         <MdSwitchAccount className="text-xl" />
-        Account
+<span className="hidden sm:block">
+Account 
+</span>
+        
       </Link>
     </div>
   );
