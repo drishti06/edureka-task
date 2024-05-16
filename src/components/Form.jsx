@@ -47,7 +47,7 @@ const Form = () => {
       <TabsContent value="personal" className="h-[100%]">
         <Card className="h-[100%]">
           <ScrollArea className="h-[100%]">
-            <div className="mb-5 flex flex-col justify-center px-5   gap-2 text-white bg-pink-400 rounded-tl-md rounded-tr-md h-[10dvh]">
+            <div className="mb-5 flex flex-col justify-center px-5   gap-2 text-white bg-pink-400 rounded-tl-md rounded-tr-md min-h-[10dvh] max-h-content">
               <CardTitle className="capitalize font-medium">
                 Personal details
               </CardTitle>
